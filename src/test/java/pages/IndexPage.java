@@ -9,7 +9,7 @@ public class IndexPage {
 
     private final WebDriver driver;
 
-    @FindBy(xpath = "//a[href='mouse-over.html']")
+    @FindBy(xpath = "//a[@href='mouse-over.html']")
     private WebElement mouseOverPageButton;
 
     public IndexPage(WebDriver driver) {
