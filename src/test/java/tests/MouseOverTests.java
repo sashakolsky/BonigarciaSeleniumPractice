@@ -30,4 +30,14 @@ public class MouseOverTests extends BaseTest {
                 .verifyHintShown(COMPASS);
     }
 
+    // This is the format we agree on going forward
+    @Test
+    public void testMouseOverCaption3() {
+        MouseOverPage mouseOverPage = new IndexPage(getDriver())
+                .getMouseOverPage()
+                .hoverOverElement(COMPASS);
+
+        Assert.assertTrue(mouseOverPage.getHint(COMPASS).isDisplayed());
+    }
+
 }
