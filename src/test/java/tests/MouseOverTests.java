@@ -19,4 +19,15 @@ public class MouseOverTests extends BaseTest {
         Assert.assertTrue(mouseOverPage.getHint(COMPASS).isDisplayed());
     }
 
+    // This is clean, but breaks the separation of concerns principle:
+    //      page structure and user actions from the validation logic
+    // Also leads to potential issues with reusability, readability and flexibility
+    @Test
+    public void testMouseOverCaption2() {
+        new IndexPage(getDriver())
+                .getMouseOverPage()
+                .hoverOverElement(COMPASS)
+                .verifyHintShown(COMPASS);
+    }
+
 }
